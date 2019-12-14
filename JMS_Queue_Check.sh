@@ -4,12 +4,12 @@
 ##########################
 #!/bin/bash
 #set -x
-#JmsCheck.sh |mailx -s "Tech View PROD JMS_CHECK"  "sr837c@gmail.com"
+#JmsCheck.sh |mailx -s "View PROD JMS_CHECK"  "src@gmail.com"
 MAILX='mailx'
 which $MAILX > /dev/null 2>&1
 SUBJECT="JobNotificationQueue Count $DATE"
 
-echo 'connect('soa122_domain_admin','Lgog6a1X','t3://uxtrn1312.schneider.com:7001')' >> ${PYTHONSCRIPT}
+echo 'connect('soa_domain_admin','xxxxxx','t3://hostname.com:7001')' >> ${PYTHONSCRIPT}
 echo 'servers=domainRuntimeService.getServerRuntimes();' >> ${PYTHONSCRIPT}
 echo 'sum = 0' >> ${PYTHONSCRIPT}
 echo 'if (len(servers) > 0):' >> ${PYTHONSCRIPT}
@@ -26,4 +26,4 @@ echo '                sum += J3' >> ${PYTHONSCRIPT}
 echo '                print 'JMS_MSG_COUNT:',J1,J2,J3' >> ${PYTHONSCRIPT}
 echo 'print 'JMS_MSG_COUNT:JobNotificationQueue :', sum' >> ${PYTHONSCRIPT}
 
-/opt/oracle/middleware/oracle_common/common/bin/wlst.sh /opt/sw/prd_middleware/MWDev_Test/ksampath/checks/jmscheck.py
+/opt/oracle/oracle_common/common/bin/wlst.sh /opt/Test/ksampath/checks/jmscheck.py
