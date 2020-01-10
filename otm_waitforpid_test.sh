@@ -37,7 +37,7 @@ for (( i=1; i < $maxServlet; i++ )); do
   if [[ $? == 99 ]]; then exit 1; fi
   echo "Checking for 200 http status code - $i of $maxServlet"
   #RC=$(curl -s -o /dev/null -I -w "%{http_code}" $otm_url)
-  RC=$(curl -s -o  /dev/null -I -w "%{http_code}" "http://tmut3.intra.schneider.com/GC3/glog.webserver.servlet.umt.Login")
+  RC=$(curl -s -o  /dev/null -I -w "%{http_code}" "http://globalurl.com/GC3/glog.webserver.servlet.umt.Login")
   #echo "Return code $RC" | tee -a ${LOG_OUT}
   if [[ $RC == '200' ]]; then
      break;
